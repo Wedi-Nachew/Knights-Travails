@@ -9,7 +9,7 @@ const possibleMoves = (coords) => {
     allMoves.push([coords[0] - 2, coords[1] + 1]);
     allMoves.push([coords[0] - 2, coords[1] - 1]);
     return allMoves.filter((loc) => {
-        return 0 < loc[0] && loc[0] < 9 && 0 < loc[1] && loc[1] < 9;
+        return 0 <= loc[0] && loc[0] < 8 && 0 <= loc[1] && loc[1] < 8;
     });
 };
 const knightMoves = (start, end) => {
@@ -36,4 +36,5 @@ const knightMoves = (start, end) => {
 
     return [];
 };
+
 console.log(knightMoves([3, 3], [4, 3]));
