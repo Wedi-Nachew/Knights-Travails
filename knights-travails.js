@@ -20,7 +20,7 @@ const knightMoves = (start, end) => {
         const current = queue.shift();
         const currentCoord = current.coord;
         if (currentCoord[0] === end[0] && currentCoord[1] === end[1]) {
-            return [...current.path, end];
+            return message([...current.path, end]);
         }
         let moves = possibleMoves(currentCoord);
         moves.forEach((move) => {
@@ -36,5 +36,8 @@ const knightMoves = (start, end) => {
 
     return [];
 };
-
-console.log(knightMoves([3, 3], [4, 3]));
+const message = (array) => {
+    console.log(`You made it in ${array.length - 1} moves! Here's your path:`);
+    array.forEach((item) => console.log(item));
+};
+knightMoves([3, 3], [4, 3]);
